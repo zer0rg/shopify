@@ -5,7 +5,7 @@
             "sections": {}
     },
     "announcement-bar": {
-        "type": "announcement",
+        "type": "announcement-bar",
         "sections": {}
     }
     },
