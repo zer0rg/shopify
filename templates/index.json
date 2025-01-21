@@ -3,6 +3,10 @@
         "banner": {
             "type": "banner",
             "sections": {}
+    },
+    "announcement-bar": {
+        "type": "announcement",
+        "sections": {}
     }
     },
     "order": [
