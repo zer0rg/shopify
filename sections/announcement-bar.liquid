@@ -1,20 +1,27 @@
 {% if section.settings["show-announcement"]  %}
 <section>
     <div class="announcement-bar">
-        <div class="announcement-bar-left-section">
-        {% if section.settings.image != blank %}
-          <img src="{{ section.settings.image | image_url }} " width="40" height="40" loading="lazy">
-        {%  else %}
-        <img src="{{ 'a.png' | asset_url }} " width="40" height="40" loading="lazy">
 
-        {% endif %}
-        {% if section.settings.image2 != blank %}
-            <img src="{{ section.settings.image | image_url }} " width="40" height="40" loading="lazy">
-          {%  else %}
-          <img src="{{ 'b.png' | asset_url }} " width="40" height="40" loading="lazy">
-  
-          {% endif %}
+
+        <div class="announcement-bar-left-section">
+            {% if section.settings.image != blank %}
+                <img src="{{ section.settings.image | image_url }} " width="40" height="40" loading="lazy">
+            {%  else %}
+                <img src="{{ 'a.png' | asset_url }} " width="40" height="40" loading="lazy">
+
+            {% endif %}
+
+            {% if section.settings.image2 != blank %}
+                <img src="{{ section.settings.image | image_url }} " width="40" height="40" loading="lazy">
+            {%  else %}
+                <img src="{{ 'b.png' | asset_url }} " width="40" height="40" loading="lazy">
+    
+            {% endif %}
         </div>
+            
+        
+
+
         <div class="announcement-bar-right-section">
             <ul>
                 {% if section.blocks.size == 0 %}
@@ -24,7 +31,7 @@
                         {% if customer %}
                             <li><a href="/account">Account</a></li>
                         {% else %}
-                            <li><a href="/account/login">LogIn</a></li>
+                            <li><a href="/account/login">Log In</a></li>
                         {% endif %}
                     {% endif %}
                 {% else %}
@@ -32,10 +39,8 @@
                         <li><a href="{{ block.settings.link }}">{{ block.settings.text }}</a></li>
                     {% endfor %}
                 {% endif %}
-                
-                
-                
-          </ul>
+        
+            </ul>
         </div>
     </div>
 </section>
