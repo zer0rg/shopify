@@ -16,24 +16,28 @@
           {% endif %}
         </div>
         <div class="announcement-bar-right-section">
-          <p>Hellooo</p>
+            <ul>
             {% if section.block.size == 0  %}  
-                <a href="#">Help</a>
+                <li> <a href="#">Help</a> </li>
                 {% if customer %}
-                <a href="/account">Account</a>
+                {% if shop.customer_accounts_enabled  %} 
+                <li><a href="/account">Account</a></li>
+                
                 {% else %}
-
-                <a href="/account/login">LogIn</a>
-                {% endif %}
+                    <li><a href="/account/login">LogIn</a></li>
+                
+            {% endif %}
+            {% endif %}
 
             {% else %}
 
                 {% for block in section.block  %}
-                    <a href="{{ block.settings.link }}">{{ block.settings.text  }}</a>
+                    <li><a href="{{ block.settings.link }}">{{ block.settings.text  }}</a></li>
+                    
 
                 {% endfor %}
             {% endif %}
-          
+          </ul>
         </div>
     </div>
 </section>
