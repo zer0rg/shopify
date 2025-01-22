@@ -19,7 +19,12 @@
           
             {% if section.block.size == 0  %}  
                 <a href="#">Help</a>
+                {% if customer %}
                 <a href="/account">Account</a>
+                {% else %}
+
+                <a href="/account/login">LogIn</a>
+                {% endif %}
 
             {% else %}
 
