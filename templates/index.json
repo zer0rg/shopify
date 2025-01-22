@@ -29,6 +29,10 @@
       "type": "three-images",
       "settings": {}
     },
+    "all-collections": {
+      "type": "all-collections",
+      "settings": {}
+    },
     "all-products": {
       "type": "all-products",
       "settings": {}
@@ -39,6 +43,7 @@
     "header",
     "banner",
     "three-images",
+    "all-collections",
     "all-products",
   ]
 }
