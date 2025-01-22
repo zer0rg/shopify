@@ -28,12 +28,26 @@
     "three-images": {
       "type": "three-images",
       "settings": {}
+    },
+    "more-info": {
+      "type": "more-info",
+      "settings": {}
+    },
+    "all-collections": {
+      "type": "all-collections",
+      "settings": {}
+    },
+    "all-products": {
+      "type": "all-collections",
+      "settings": {}
     }
   },
   "order": [
     "announcement-bar",
     "header",
     "banner",
-    "three-images"
+    "three-images",
+    "more-info",
+    "all-collections"
   ]
 }
