@@ -8,7 +8,7 @@
     {% for product in collections['air-force'].products %}
 
         
-        <img src="{{ product.image |  image_url  }}" width="300" height="300">
+        <img src="{{ product.featured_image |  image_url  }}" width="300" height="300">
 
         <h3>{{ product.title | link_to: product.url }}</h3>
       
