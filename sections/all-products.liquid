@@ -1,0 +1,48 @@
+<section class="all-products">
+
+<h1>{{ collections['air-force'].title }}</h1>
+
+<div class="product-container">
+    <div class="all-products-wrapper">
+
+    {% for product in collections['air-force'].products %}
+
+        <h3>{{ product.title | link_to: product.url }}</h3>
+      
+    {% endfor %}
+
+    </div>
+</div>
+
+</section>
+
+
+
+{% schema %}
+    {
+        "name": "all-products",
+        "settings": [
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background",
+            "default": "#F4F4F4"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text",
+            "default": "#000000"
+        }
+         
+    ],
+    "blocks": [
+],
+     "presets": [
+        {
+            "name": "all-products"
+        }
+     ]
+    } 
+
+    {% endschema %}

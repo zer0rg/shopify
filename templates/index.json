@@ -28,12 +28,17 @@
     "three-images": {
       "type": "three-images",
       "settings": {}
+    },
+    "all-products": {
+      "type": "three-images",
+      "settings": {}
     }
   },
   "order": [
     "announcement-bar",
     "header",
     "banner",
-    "three-images"
+    "three-images",
+    "all-products"
   ]
 }
