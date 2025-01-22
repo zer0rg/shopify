@@ -43,9 +43,8 @@ body{
     transition: all 0.3s;
 }
 
-.announcement-links a:hover{
+.announcement-links li:hover{
     text-decoration: underline;
-    color: red;
 }
 
 .header-nav{
