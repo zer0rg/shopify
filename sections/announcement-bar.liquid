@@ -8,6 +8,12 @@
         <img src="{{ 'a.png' | asset_url }} " width="40" height="40" loading="lazy">
 
         {% endif %}
+        {% if section.settings.image2 != blank %}
+            <img src="{{ section.settings.image | image_url }} " width="40" height="40" loading="lazy">
+          {%  else %}
+          <img src="{{ 'b.png' | asset_url }} " width="40" height="40" loading="lazy">
+  
+          {% endif %}
         </div>
         <div class="announcement-bar-right-section">
  
@@ -30,6 +36,24 @@
             "id": "image",
             "label": "Pick Image",
             "info": "Formato PNG es recomendado"
+        },
+        {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Pick Image",
+            "info": "Formato PNG es recomendado"
+        },
+        {
+            "type": "color",
+            "id": "backgrouund",
+            "label": "Background",
+            "info": "#F4F4F4"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text",
+            "info": "#000000"
         }
          
     ],
