@@ -24,4 +24,16 @@ body{
 .announcement-links{
     display: flex;
     list-style: none;
+    
+}
+
+.announcement-links li{
+    padding: 3px;
+    font-size: 15px;
+    list-style-type: none;
+}
+
+.announcement-links a{
+    color: inherit;
+    text-decoration: none;
 }
