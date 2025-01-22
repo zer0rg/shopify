@@ -30,7 +30,7 @@
       "settings": {}
     },
     "all-products": {
-      "type": "three-images",
+      "type": "all-products",
       "settings": {}
     }
   },
