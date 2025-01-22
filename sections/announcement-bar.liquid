@@ -17,26 +17,20 @@
         </div>
         <div class="announcement-bar-right-section">
             <ul>
-            {% if section.block.size == 0  %}  
-                <li> <a href="#">Help</a> </li>
-                {% if customer %}
-                {% if shop.customer_accounts_enabled  %} 
-                <li><a href="/account">Account</a></li>
-                
+                {% if section.block.size == 0 %}
+                    <li><a href="#">Help</a></li>
+                    {% if customer %}
+                        {% if shop.customer_accounts_enabled %}
+                            <li><a href="/account">Account</a></li>
+                        {% else %}
+                            <li><a href="/account/login">LogIn</a></li>
+                        {% endif %}
+                    {% endif %}
                 {% else %}
-                    <li><a href="/account/login">LogIn</a></li>
-                
-            {% endif %}
-            {% endif %}
-
-            {% else %}
-
-                {% for block in section.block  %}
-                    <li><a href="{{ block.settings.link }}">{{ block.settings.text  }}</a></li>
-                    
-
-                {% endfor %}
-            {% endif %}
+                    {% for block in section.block %}
+                        <li><a href="{{ block.settings.link }}">{{ block.settings.text }}</a></li>
+                    {% endfor %}
+                {% endif %}
           </ul>
         </div>
     </div>
