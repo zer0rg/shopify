@@ -5,59 +5,76 @@
         <div class="slide-text" id="text3"><p>Get Your Gear Faster</p></div>
     </div>
 </section>
+
 <style>
-     .banner-wrapper{
+    .banner-wrapper {
+        position: relative;
         background: {{ section.settings.background }};
         color: {{ section.settings.text_color }};
+        width: 100%;
+        height: 200px; /* Ajusta según el tamaño deseado */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
     }
 
-    .slide-text{
+    .slide-text {
         position: absolute;
-        top: 120px;
-        left: -150%;
-        transform: transform(0, -50%);
+        opacity: 0;
+        font-size: 20px;
         color: black;
         padding: 20px;
-        font-size: 20px;
-        transition: left 0.5s ease-in-out;
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .next {
+        transform: translateX(100%);
+    }
+
+    .prev {
+        transform: translateX(-100%);
     }
 </style>
 
-
 <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function() {
 
-    const text1 = document.getElementById('text1');
-    const text2 = document.getElementById('text2');
-    const text3 = document.getElementById('text3');
+        const text1 = document.getElementById('text1');
+        const text2 = document.getElementById('text2');
+        const text3 = document.getElementById('text3');
 
-    const texts = [text1, text2, text3]
-    let currentIndex = 0
+        const texts = [text1, text2, text3];
+        let currentIndex = 0;
 
-    function slideToMiddle(element){
+        function showText(index) {
+            texts.forEach((text, i) => {
+                text.classList.remove('active');
+                text.classList.remove('next');
+                text.classList.remove('prev');
+            });
 
-    element.style.left= '40%'
+            const prevIndex = (index - 1 + texts.length) % texts.length;
+            const nextIndex = (index + 1) % texts.length;
 
-    }
+            texts[index].classList.add('active');
+            texts[prevIndex].classList.add('prev');
+            texts[nextIndex].classList.add('next');
+        }
 
-    function resetPosition(element){
+        showText(currentIndex);
 
-    element.style.left = "-100%"
+        setInterval(function() {
+            currentIndex = (currentIndex + 1) % texts.length;
+            showText(currentIndex);
+        }, 3000);
 
-    }
-
-    function slideText(){
-        resetPosition(texts[currentIndex]);
-
-        currentIndex = (currentIndex + 1) % texts.length
-        slideToMiddle(texts[currentIndex]);
-    }
-
-    slideToMiddle(texts[currentIndex]);
-
-    setInterval(slideText, 3000);
-
-    })
+    });
 </script>
 
 {% schema %}
