@@ -14,5 +14,14 @@ body{
 .announcement-bar-left-section{
     display: flex;
     align-items: center;
-    background-color: red;
+}
+
+.announcement-bar-left-section{
+    display: flex;
+    align-items: center;
+}
+
+.announcement-links{
+    display: flex;
+    list-style: none;
 }
