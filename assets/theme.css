@@ -40,6 +40,11 @@ body{
 .announcement-links a{
     color: inherit;
     text-decoration: none;
+    transition: all 0.3s;
+}
+
+.announcement-links a:hover{
+    text-decoration: underline;
 }
 
 .header-nav{
